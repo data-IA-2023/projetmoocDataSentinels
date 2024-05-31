@@ -113,6 +113,10 @@ def lancement():
         st.write("")
         st.write("")
         st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
+        st.write("")
     if choix == "Analyse":
         # switch_page("Contact")
         st.title("Formulaire et Analyse")
@@ -121,6 +125,9 @@ def lancement():
         st.title("Contact")
 
 lancement()
+
+# Sidebar content
+st.sidebar.image("./static/logo.png")
 
 # ==============================
 # formulaire 
