@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemon");
+@import url("https://fonts.googleapis.com/css?family=Sofadi One");
+@import url("https://fonts.googleapis.com/css?family=Turret Road" );
+@import url("https://fonts.googleapis.com/css?family=Tilt Neon" );
+            
+
+body {
+    font-family: 'Tilt Neon'; 
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(150, 150, 150);;
+}
+
+p {
+    font-family: "Tilt Neon";
+}
+
+li {
+    font-family: 'Tilt Neon'
+}
+
+h1 {
+    font-family : 'Lemon';
+    color : rgb(0, 106, 180);
+}
