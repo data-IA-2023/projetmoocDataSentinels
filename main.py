@@ -4,6 +4,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import base64
+from _pages.Formulaire import *
 from _pages.Analyse import *
 
 # ==============================
@@ -23,12 +24,13 @@ st.markdown(
             }}
     </style>""".format(padding_top=1, max_width=65),
     unsafe_allow_html=True,
-    )
+)
 
 # ==============================
 # variable de session
 # ==============================
-
+if "dict_form" not in st.session_state:
+    st.session_state.dict_form = False
 
 # ==============================
 # charge le css
@@ -109,8 +111,8 @@ st.markdown(
 # ==============================
 def lancement():
     choix = option_menu(
-        None, ["Home", "Analyse",  "Information"], 
-        icons=['house', 'cloud-upload', "list-task"], 
+        None, ["Home", "Formulaire", "Analyse",  "Information"], 
+        icons=["house", "list-task", "cloud-upload", "gear"], 
         menu_icon="cast", default_index=0, orientation="horizontal",
         styles={
             "container": {
@@ -136,18 +138,19 @@ def lancement():
         st.write("")
         st.write("Rendez-vous sur la page Analyse pour voir si un étudiant à des chance de réussir sa formation.")
         st.write("Rendez-vous sur la page Contact pour plus d'information.")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
-        st.write("")
+    
+    if choix == "Formulaire":
+        # switch_page("Formulaire")
+        st.title("Formulaire")
+        dict = formulaire()
+        st.session_state.dict_form = dict
+        st.write(dict)
+
     if choix == "Analyse":
         # switch_page("Analyse")
-        st.title("Formulaire et Analyse")
-        dict = formulaire()
-        st.write(dict)
+        st.title("Analyse")
+        analyse(st.session_state.dict_form)
+
     if choix == "Information":
         # switch_page("Information")
         st.title("Information")

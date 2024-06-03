@@ -2,59 +2,66 @@
 # import 
 # ==============================
 import streamlit as st
+from Sentiment_analysis import translate_and_analyse
 
 # ==============================
 # variable de session
 # ==============================
 
+# traitement du bouton d'annalyse de la candidature
+def click_annalyse_candidature():
+    st.session_state.candidature = True
+
+if "annalyse de la candidature" not in st.session_state:
+    st.session_state.candidature = False
+
 # traitement du bouton de formulaire
-def click_formulaire():
-    st.session_state.formulaire = True
+def click_analyse_message():
+    st.session_state.message = True
 
-if "formulaire" not in st.session_state:
-    st.session_state.formulaire = False
+if "analyse du message" not in st.session_state:
+    st.session_state.message = False
 
-# ==============================
-# formulaire 
-# ==============================
-def formulaire () :
-    # champs à remplir
-    st.header("Formulaire pour les estimations :")
+# traitement du bouton de formulaire
+def click_topic_FAQ():
+    st.session_state.topic_FAQ = True
 
-    with st.form("Formulaire pour les estimations :"):
-        new_user = st.text_input("choisis ton nom d'utilisateur :", value="Morty")
-        new_mooc = st.selectbox( "Choisi la formation visée",
-                                ("S'initier à la fabrication numérique", 
-                                 "Programmer un objet avec un Arduino", 
-                                 "Imprimer en 3D",
-                                 "Modéliser en 3D avec FreeCAD",
-                                 "Fabriquer un objet connecté"))
-        new_message = st.text_input("Entre le message à poster sur le forum", value="bla bla bla")
-        # new_startYear = st.slider("En quelle année le film va sortir", min_value=1850.0, max_value=2100.0, step =1.0, value=2018.0)
-        st.form_submit_button("Valider", on_click=click_formulaire)
-
-    # bouton de validation
-    if st.session_state.formulaire == True :
-
-        if not new_user :
-            st.sidebar.error("Tu dois renseigner un nom d'utilisateur")
-        if not new_mooc :
-            st.sidebar.error("Tu dois renseigner la formation")
-        if not new_message :
-            st.sidebar.error("Tu dois renseigner un message pour le forum")
-
-        if new_user and new_mooc and new_message :
-            return {"new_user":new_user, "new_mooc" : new_mooc, "new_message" : new_message}
-
+if "recherche de topic et FAQ" not in st.session_state:
+    st.session_state.topic_FAQ = False
 
 # ==============================
 # traitement du formulaire
 # ==============================
+def analyse (dict) :
+    # teste le dict
+    # st.write(dict)
+    if dict == False :
+        st.write("Les informations du formulaire ne sont pas disponible, merci de remplir le formulaire.")
 
-# quand le formulaire est validé : 3 boulton apparesse
+    else :
+        # quand le formulaire est validé : 3 boulton apparesse
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.button("annalyse de la candidature", on_click=click_annalyse_candidature)
+        with col2:
+            st.button("analyse du message", on_click=click_analyse_message)
+        with col3:
+            st.button("recherche de topic et FAQ", on_click=click_topic_FAQ)
 
-# bouton de l'annalyse de la candidature
+        # bouton de l'annalyse de la candidature
+        if st.session_state.candidature == True :
+            st.header("Annalyse de la candidature :")
 
-# bouton de l'analyse du message
+        # bouton de l'analyse du message
+        if st.session_state.message == True :
+            st.header("Analyse du message")
+            message = dict["new_message"]
+            emotion_labels = translate_and_analyse(message)
+            st.write("l'analyse de l'émotion du message donne :")
+            st.write(emotion_labels)
 
-# bouton de la FAQ et de recherche de topic
+        # bouton de la FAQ et de recherche de topic
+        if st.session_state.topic_FAQ == True :
+            st.header("Recherche de topic et FAQ :")
+
+            

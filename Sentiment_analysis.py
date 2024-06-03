@@ -138,7 +138,7 @@ def translate_emotion_to_fr(emotion):
     except : return None
 
 
-if __name__ == "__main__":
-    # Exemple d'utilisation de la fonction translate_and_analyse avec le texte "Je t'aime."
-    emotion_labels = translate_and_analyse("c'est incroyable.")
-    print(emotion_labels)
+# if __name__ == "__main__":
+#     # Exemple d'utilisation de la fonction translate_and_analyse avec le texte "Je t'aime."
+#     emotion_labels = translate_and_analyse("c'est incroyable.")
+#     print(emotion_labels)
