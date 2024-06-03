@@ -2,10 +2,9 @@
 # import 
 # ==============================
 import streamlit as st
-from bs4 import BeautifulSoup
-import codecs
 from streamlit_option_menu import option_menu
 import base64
+from _pages.Analyse import *
 
 # ==============================
 # run : streamlit run c:/Users/sandy/Documents/devIA/brief/mooc/projetmoocDataSentinels/main.py
@@ -13,7 +12,18 @@ import base64
 st.set_page_config(
     page_title="Fun Mooc",
     page_icon="./static/logo.png",
+    initial_sidebar_state="expanded",
 )
+
+st.markdown(
+    """<style>
+        .appview-container .main .block-container {{
+            padding-top: {padding_top}rem;
+            max-width: {max_width}rem;
+            }}
+    </style>""".format(padding_top=1, max_width=65),
+    unsafe_allow_html=True,
+    )
 
 # ==============================
 # variable de session
@@ -44,7 +54,7 @@ def set_png_as_page_bg(png_file):
     font-family: "Turret Road";
     }
     [data-testid="stAppViewBlockContainer"]{
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(225, 225, 225);
     font-family: "Tilt Neon";
     }
     </style>
@@ -79,22 +89,38 @@ set_png_as_page_banner('./static/banner.png')
 
 
 # ==============================
+# sidebar content
+# ==============================
+st.sidebar.image("./static/logo.png")
+
+st.markdown(
+    """<style>
+        [data-testid="stSidebar"]{
+        color: rgb(225, 225, 225);
+        background-color: rgb(175, 175, 175);
+        padding-top: 1rem;
+        }
+    </style>""",
+    unsafe_allow_html=True,
+    )
+
+# ==============================
 # bar de navigation
 # ==============================
 def lancement():
     choix = option_menu(
-        None, ["Home", "Analyse",  "Contact"], 
+        None, ["Home", "Analyse",  "Information"], 
         icons=['house', 'cloud-upload', "list-task"], 
         menu_icon="cast", default_index=0, orientation="horizontal",
         styles={
             "container": {
-                "padding": "0!important", "background-color": "rgb(150, 150, 150)"
+                "padding": "0!important", "background-color": "rgb(175, 175, 175)"
             },
             "icon": {
-                "color": "rgb(200, 200, 200)", "font-size": "15px"
+                "color": "rgb(225, 225, 225)", "font-size": "15px"
             }, 
             "nav-link": {
-                "color": "rgb(200, 200, 200)", "font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#eee"
+                "color": "rgb(225, 225, 225)", "font-size": "15px", "text-align": "center", "margin":"0px", "--hover-color": "#eee"
             },
             "nav-link-selected": {
                 "color": "rgb(250, 250, 250)", "background-color": "rgb(0, 106, 180)"
@@ -103,7 +129,7 @@ def lancement():
     )
 
     if choix == "Home":
-        # switch_page("Analytics")
+        # switch_page("Home")
         st.title("Home")
         st.write("")
         st.write("Bienvenu sur l'Appli de Fun Mooc !")
@@ -118,43 +144,15 @@ def lancement():
         st.write("")
         st.write("")
     if choix == "Analyse":
-        # switch_page("Contact")
+        # switch_page("Analyse")
         st.title("Formulaire et Analyse")
-    if choix == "Contact":
-        # switch_page("Contact")
-        st.title("Contact")
+        dict = formulaire()
+        st.write(dict)
+    if choix == "Information":
+        # switch_page("Information")
+        st.title("Information")
+        st.write("Aplication réalisé par Mohamed, Jonathan et Sandy.")
+        st.write("Il n'y a pas plus d'information pour le moment.")
 
 lancement()
 
-# Sidebar content
-st.sidebar.image("./static/logo.png")
-
-# ==============================
-# formulaire 
-# ==============================
-
-# champs à remplir
-
-# bouton de validation
-
-
-# ==============================
-# traitement du formulaire
-# ==============================
-
-# quand le formulaire est validé : 3 boulton apparesse
-
-# bouton de l'annalyse de la candidature
-
-# bouton de l'analyse du message
-
-# bouton de la FAQ et de recherche de topic
-
-
-# ==============================
-# 
-# ==============================
-# # Sidebar content
-# st.sidebar.header("Sidebar Title")
-# st.sidebar.subheader("Subheading")
-# st.sidebar.write("Sidebar content goes here.")
