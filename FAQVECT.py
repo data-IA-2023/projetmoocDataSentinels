@@ -53,7 +53,7 @@ def topic_FAQ (input_text) :
     
     if results:
         # Créer un dataframe pour afficher les résultats
-        df = pd.DataFrame(results, columns=["ID du message", "ID du cours", "Contenu du message", "Score de similarité"])
+        df = pd.DataFrame(results, columns=["ID du message", "Topic du message", "Contenu du message", "Score de similarité"])
         st.dataframe(df)
     else:
         st.write("Aucun message similaire trouvé.")

@@ -37,7 +37,7 @@ def analyse (dict) :
     # teste le dict
     # st.write(dict)
     if dict == False :
-        st.write("Les informations du formulaire ne sont pas disponible, merci de remplir le formulaire.")
+        st.sidebar.error("Les informations du formulaire ne sont pas disponible, merci de remplir le formulaire.")
 
     else :
         # quand le formulaire est validé : 3 boulton apparesse
