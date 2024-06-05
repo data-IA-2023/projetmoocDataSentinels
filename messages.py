@@ -79,6 +79,7 @@ def messageExtracteur(doc, cursor, connection):
     if updated_at:
         updated_at = datetime.fromisoformat(updated_at.replace('Z', '+00:00'))
 
+
     # Insertion des données dans PostgreSQL
     insert_message_query = '''
         INSERT INTO message (
