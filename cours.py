@@ -11,6 +11,7 @@ dotenv.load_dotenv()
 client = MongoClient(os.environ["MONGO_URL"])
 user_collection = client['mooc']['user']
 
+
 # Connexion PostgreSQL
 connection = psycopg2.connect(
     user=os.getenv("POSTGRES_USER"),
