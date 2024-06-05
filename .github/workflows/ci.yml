@@ -27,12 +27,12 @@ jobs:
 
     - name: Set up environment variables
       run: |
-        echo "MONGO_URL=${{ secrets.env.MONGO_URL }}" >> $GITHUB_ENV
-        echo "POSTGRES_USER=${{ secrets.env.POSTGRES_USER }}" >> $GITHUB_ENV
-        echo "POSTGRES_PASSWORD=${{ secrets.env.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
-        echo "POSTGRES_HOST=${{ secrets.env.POSTGRES_HOST }}" >> $GITHUB_ENV
-        echo "POSTGRES_PORT=${{ secrets.env.POSTGRES_PORT }}" >> $GITHUB_ENV
-        echo "POSTGRES_DB=${{ secrets.env.POSTGRES_DB }}" >> $GITHUB_ENV
+        echo "MONGO_URL=${{ secrets.MONGO_URL }}" >> $GITHUB_ENV
+        echo "POSTGRES_USER=${{ secrets.POSTGRES_USER }}" >> $GITHUB_ENV
+        echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> $GITHUB_ENV
+        echo "POSTGRES_HOST=${{ secrets.POSTGRES_HOST }}" >> $GITHUB_ENV
+        echo "POSTGRES_PORT=${{ secrets.POSTGRES_PORT }}" >> $GITHUB_ENV
+        echo "POSTGRES_DB=${{ secrets.POSTGRES_DB }}" >> $GITHUB_ENV
 
     - name: Run tests
       run: |
