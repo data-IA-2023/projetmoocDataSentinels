@@ -1,3 +1,13 @@
+
+# env:
+#   LIMIT: ${{ vars.LIMIT }}
+#   MONGO_DB: ${{ vars.MONGO_DB }}
+#   MONGO_URL: ${{ secrets.MONGO_URL }}
+#   POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+
+
+
+
 name: CI
 
 on:
