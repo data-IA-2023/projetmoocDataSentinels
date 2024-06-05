@@ -3,6 +3,7 @@
 # ==============================
 import streamlit as st
 from Sentiment_analysis import translate_and_analyse
+from FAQVECT import topic_FAQ
 
 # ==============================
 # variable de session
@@ -63,5 +64,8 @@ def analyse (dict) :
         # bouton de la FAQ et de recherche de topic
         if st.session_state.topic_FAQ == True :
             st.header("Recherche de topic et FAQ :")
+            texte = dict["new_message"]
+            topic_FAQ (texte)
+
 
             
