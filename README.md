@@ -1,6 +1,7 @@
 # projetmoocDataSentinels
 
 lien du trello : https://trello.com/invite/b/97gStloa/ATTI77219a83e9f886a5c986948c763e47c46A4CD3BB/mooc
+lien du google doc : https://docs.google.com/document/d/1RpKTF53EDqeXQOWVQJqJz2Hf-2vFspMKKSNg8GAF2oM/edit?usp=sharing
 
 ## rôle :
 gestion de gitHub : Jonathan
