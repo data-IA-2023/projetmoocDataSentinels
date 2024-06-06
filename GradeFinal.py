@@ -95,12 +95,25 @@ def train_and_evaluate_models(X_train, X_test, y_train, y_test):
                 ('regressor', RandomForestRegressor(random_state=42))
             ]),
             "param_grid": { 
-                'regressor__n_estimators': [50, 100, 200],
-                'regressor__max_depth': [3, 5, 7, None],
-                'regressor__min_samples_split': [2, 5, 10],
-                'regressor__min_samples_leaf': [1, 2, 4]
+                'regressor__n_estimators': [200],
+                'regressor__max_depth': [None],
+                'regressor__min_samples_split': [2],
+                'regressor__min_samples_leaf': [1]
             } 
         },
+        # {
+        #     "name": "RandomForestRegressor",
+        #     "estimator": Pipeline(steps=[
+        #         ('preprocessor', preprocessor), 
+        #         ('regressor', RandomForestRegressor(random_state=42))
+        #     ]),
+        #     "param_grid": { 
+        #         'regressor__n_estimators': [50, 100, 200],
+        #         'regressor__max_depth': [3, 5, 7, None],
+        #         'regressor__min_samples_split': [2, 5, 10],
+        #         'regressor__min_samples_leaf': [1, 2, 4]
+        #     } 
+        # },
         # {
         #     "name": "Ridge",
         #     "estimator": Pipeline(steps=[
@@ -108,7 +121,7 @@ def train_and_evaluate_models(X_train, X_test, y_train, y_test):
         #         ('regressor', Ridge())
         #     ]),
         #     "param_grid": { 
-        #         # 'regressor__alpha': [0.01, 0.1, 1, 10, 100]
+        #         'regressor__alpha': [0.01, 0.1, 1, 10, 100]
         #         'regressor__alpha': [1]
         #     } 
         # },
@@ -161,7 +174,3 @@ def load_model_and_predict(model_path, X_new):
     predictions = model.predict(X_new)
     
     return predictions
-
-# Exemple d'utilisation de la fonction de prédiction
-# X_new est un DataFrame avec les nouvelles données
-# predictions = load_model_and_predict("RandomForestRegressor_model.joblib", X_new)
