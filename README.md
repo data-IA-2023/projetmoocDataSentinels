@@ -45,7 +45,7 @@ Pour détecter la langue, nous avons choisi langdetect, un module Python.
 
 ### modèle de  prévision de réussite
 
-Pour le modèle de prévition nous avons crée et entrainner un modele personnelle.
+Pour le modèle de prévition nous avons crée et entrainner un modele personnelle de RandomForestRegressor.
 
 
 Le modele est intégré à MLFlow.
