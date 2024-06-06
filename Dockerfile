@@ -1,17 +1,26 @@
 # Utiliser une image de base de Python
-FROM python:3.9
+FROM python:3.10.5-slim
+
 
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers de l'application dans le conteneur
+# Copy requirements.txt and install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# Copy the rest of the application code
 COPY . .
 
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt
+ENV MONGO_URL='51.11.209.4:27017'
+ENV POSTGRES_USER='sentinelsdata'
+ENV POSTGRES_PASSWORD='Sentinelsdata37'
+ENV POSTGRES_HOST='51.11.209.4'
+ENV POSTGRES_PORT='5432'
+ENV POSTGRES_DB='postgres'
 
 # Exposer le port sur lequel l'application fonctionne
 EXPOSE 8501
 
 # Commande pour lancer l'application
-CMD ["streamlit", "run", "streamlitGrade.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "App_invoice.py", "--server.port", "8501", "--server.address", "0.0.0.0"]

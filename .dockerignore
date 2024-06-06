@@ -1,0 +1,6 @@
+.env
+.venv/
+archive/
+.vscode/
+mlruns/
+_pycache_/
