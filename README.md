@@ -1,3 +1,12 @@
+# Pour lancer le programme:
+```
+python -m venv env
+.\env\Scripts\activate
+pip install -r requirements.txt
+
+streamlit run main.py
+```
+
 # projetmoocDataSentinels
 
 lien du trello : https://trello.com/invite/b/97gStloa/ATTI77219a83e9f886a5c986948c763e47c46A4CD3BB/mooc
