@@ -20,3 +20,4 @@ nltk
 pytest
 mlflow
 streamlit_option_menu
+torch
