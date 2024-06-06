@@ -9,7 +9,7 @@ from _pages.Formulaire import *
 from _pages.Analyse import *
 
 # ==============================
-# run : streamlit run c:/Users/sandy/Documents/devIA/brief/mooc/projetmoocDataSentinels/main.py
+# run : streamlit run main.py
 # ==============================
 st.set_page_config(
     page_title="Fun Mooc",
