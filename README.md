@@ -15,15 +15,15 @@ gestion de machine virtuel et de base de données : Mohammed
 ## détaille de l'application :
 
 L'application est codé avec streamlit. Elle permet de remplir un formulaire et d'ans faire l'analise grâce à plusieur modele de machine learning :
-  . modèle de détection de langue
+    . modèle de détection de langue
   
-  . modèle d'analyse de sentiments
+    . modèle d'analyse de sentiments
   
-  . modèle de  prévision de réussite
+    . modèle de  prévision de réussite
   
-  . topic modeling
-  
-  . FAQ
+    . topic modeling
+    
+    . FAQ
   
 
   L'application est déployer sur azure via machine virtuel et docker.
