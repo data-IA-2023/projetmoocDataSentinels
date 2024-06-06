@@ -4,6 +4,7 @@ lien du trello : https://trello.com/invite/b/97gStloa/ATTI77219a83e9f886a5c98694
 
 lien du google doc : https://docs.google.com/document/d/1RpKTF53EDqeXQOWVQJqJz2Hf-2vFspMKKSNg8GAF2oM/edit?usp=sharing
 
+
 ## rôle :
 gestion de gitHub : Jonathan
 
@@ -28,6 +29,7 @@ L'application est codé avec streamlit. Elle permet de remplir un formulaire et 
   
 
   L'application est déployer sur azure via machine virtuel et docker.
+  
   L'apllication intègres des test de non régrétion et de build.
 
 
