@@ -15,6 +15,7 @@ gestion de machine virtuel et de base de données : Mohammed
 ## détaille de l'application :
 
 L'application est codé avec streamlit. Elle permet de remplir un formulaire et d'ans faire l'analise grâce à plusieur modele de machine learning :
+
     . modèle de détection de langue
   
     . modèle d'analyse de sentiments
