@@ -28,18 +28,27 @@ L'application est codé avec streamlit. Elle permet de remplir un formulaire et 
     . FAQ
   
 
-  L'application est déployer sur azure via machine virtuel et docker.
+L'application est déployer sur azure via machine virtuel et docker.
   
-  L'apllication intègres des test de non régrétion et de build.
+L'apllication intègres des test de non régrétion et de build.
 
 
 ## détaille des modèles :
 
 ### modèle de détection de langue et d'analyse de sentiments
 
+Après comparaison des différents modèles pré-entraînés, nous avons choisi RoBERTa pour l'analyse de sentiment.
+
+RoBERTa : BERT (Bidirectional Encoder Representations from Transformers) est un modèle de langage profond développé par Google. Bien qu'il soit principalement utilisé pour des tâches de compréhension de texte, il peut également être adapté à l'analyse de sentiment en fine-tunant le modèle sur des données d'analyse de sentiment. Implémentations disponibles en Python : Hugging Face Transformers, TensorFlow, PyTorch.
+
+Pour détecter la langue, nous avons choisi langdetect, un module Python.
+
 ### modèle de  prévision de réussite
 
-le modele est intégré à MLFlow
+Pour le modèle de prévition nous avons crée et entrainner un modele personnelle.
+
+
+Le modele est intégré à MLFlow.
 
 ![image](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/c44dbd32-ca66-4f5b-9c67-c1e73f7c23c8)
 
@@ -48,6 +57,12 @@ le modele est intégré à MLFlow
 
 ### topic modeling et FAQ :
 
+our le modèle de recherche de topics et FAQ, nous avons créé et entraîné un modèle personnel.
+
+Le modèle est basé sur le modèle CamemBERT, nous faisons l'embedding du texte du message à analyser. Ensuite, nous effectuons une similarité cosinus sur les messages de la base de données. Pour plus d'efficacité et de rapidité, la similarité cosinus est calculée directement dans la base de données, pendant la requête. Les 7 messages les plus similaires sont affichés. Le topic est le cours et la session des messages.
+
+
+
 ## Base de données :
 
 Les fichier json sont ouvert et annalyser sur mangoDB. Nous avons, par la suite migré les informations utiles dans une base de Donnée SQL postgres pour plus de facilité.
@@ -55,8 +70,6 @@ Les fichier json sont ouvert et annalyser sur mangoDB. Nous avons, par la suite 
 ![diagram_bd](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/0f121aa8-97d1-48b5-aa22-c14624790b90)
 
 
-## visuel de l'application :
+## Visuel de l'application :
 
-![Capture3](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/07c58f43-5a6e-41f0-9755-274d1c5424a1)
-
-
+![Capture3](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/748f9f98-b00d-48b4-a96e-0f96c431f766)
