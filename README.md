@@ -70,3 +70,6 @@ Les fichier json sont ouvert et annalyser sur mangoDB. Nous avons, par la suite 
 ![diagram_bd](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/0f121aa8-97d1-48b5-aa22-c14624790b90)
 
 
+## Visuel de l'application :
+
+![Capture3](https://github.com/data-IA-2023/projetmoocDataSentinels/assets/43037380/748f9f98-b00d-48b4-a96e-0f96c431f766)
