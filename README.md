@@ -28,7 +28,7 @@ L'application est codé avec streamlit. Elle permet de remplir un formulaire et 
     . FAQ
   
 
-L'application est déployer sur azure via machine virtuel et docker.
+L'application est déployer sur docker mais pas sur azure via machine virtuel.
   
 L'apllication intègres des test de non régrétion et de build.
 
