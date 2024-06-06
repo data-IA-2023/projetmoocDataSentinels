@@ -57,7 +57,7 @@ Le modele est intégré à MLFlow.
 
 ### topic modeling et FAQ :
 
-our le modèle de recherche de topics et FAQ, nous avons créé et entraîné un modèle personnel.
+Pour le modèle de recherche de topics et FAQ, nous avons créé et entraîné un modèle personnel.
 
 Le modèle est basé sur le modèle CamemBERT, nous faisons l'embedding du texte du message à analyser. Ensuite, nous effectuons une similarité cosinus sur les messages de la base de données. Pour plus d'efficacité et de rapidité, la similarité cosinus est calculée directement dans la base de données, pendant la requête. Les 7 messages les plus similaires sont affichés. Le topic est le cours et la session des messages.
 
