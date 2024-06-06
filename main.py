@@ -4,6 +4,7 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 import base64
+from datetime import datetime
 from _pages.Formulaire import *
 from _pages.Analyse import *
 
@@ -109,6 +110,10 @@ st.markdown(
 # ==============================
 # bar de navigation
 # ==============================
+def calculate_age(X):
+    current_year = datetime.now().year
+    return current_year - X
+
 def lancement():
     choix = option_menu(
         None, ["Home", "Formulaire", "Analyse",  "Information"], 

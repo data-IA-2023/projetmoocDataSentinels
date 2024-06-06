@@ -2,6 +2,7 @@
 # import 
 # ==============================
 import streamlit as st
+from streamlitGrade import get_suggestions_from_db
 
 # ==============================
 # variable de session
@@ -30,23 +31,32 @@ def formulaire () :
     # champs à remplir
     st.header("Formulaire pour les estimations :")
 
+    # courses = get_suggestions_from_db("course")
+    # bodyemotions = get_suggestions_from_db("bodyemotion")
+    # countries = get_suggestions_from_db("country")
+    # genders = get_suggestions_from_db("gender")
+    # csps = get_suggestions_from_db("csp")
+    # educations = get_suggestions_from_db("level_of_education")
+
+    # st.write("courses :", "bodyemotions :", "countries :", "genders :", "csps :", "educations :")
+    # st.write(courses, bodyemotions, countries, genders, csps, educations)
+    
     with st.form("Formulaire pour les estimations :"):
         new_user = st.text_input("choisi ton nom d'utilisateur :", value="Morty")
-        new_mooc = st.selectbox( "Choisi la formation visée", options=list(CHOICES.keys()), format_func=format_func)
-        new_genre = st.selectbox("choisi ton genre :", ("","f","m"))
-        new_contry = st.selectbox( "Choisi ton pay", ("fr", "TN", "LB", "GA", "SN", "DZ", "RE", "MA", "NE", "HT", "CN", "BJ", "CD"))
-        new_age = st.number_input("Choisi ta date de naissence", min_value=1850, max_value=2100, step =1)
-        new_level_educ = st.selectbox("choisi ton niveau de diplome :", ("none","m","hs", "jhs", "b", "p", "a", "other"))
+        new_mooc = st.selectbox( "Choisi la formation visée", options=list(CHOICES.keys()), format_func=format_func)#, value=courses)
+        new_genre = st.selectbox("choisi ton genre :", ("none","f","m"))#, value=genders)
+        new_contry = st.selectbox( "Choisi ton pay", ("fr", "TN", "LB", "GA", "SN", "DZ", "RE", "MA", "NE", "HT", "CN", "BJ", "CD"))#, Value=countries)
+        new_age = st.number_input("Choisi ta date de naissence", min_value=1900, max_value=2024, value=2000, step =1)
+        new_level_educ = st.selectbox("choisi ton niveau de diplome :", ("none","m","hs", "jhs", "b", "p", "a", "other"))#, value=educations)
         new_csp = st.selectbox("choisi ton statut :", 
                                ("none","Cadre, sup","Retraité", "Sans", "Etudiant", "Employé", "Prof interm", 
-                                "Enseugnant", "Artisan, commerçant ou chef d'entreprise", "Recherche emploi"))
-        new_message = st.text_input("Entre le message à poster sur le forum", value="bla bla bla")
+                                "Enseugnant", "Artisan, commerçant ou chef d'entreprise", "Recherche emploi"))#, value=csps)
+        new_message = st.text_input("Entre le message à poster sur le forum", value="cool ce cours !")
         
         st.form_submit_button("Valider", on_click=click_formulaire)
 
     # bouton de validation
     if st.session_state.formulaire == True :
-
         if not new_user :
             st.sidebar.error("Tu dois renseigner un nom d'utilisateur")
         if not new_mooc :

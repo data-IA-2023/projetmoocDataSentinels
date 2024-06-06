@@ -4,6 +4,7 @@
 import streamlit as st
 from Sentiment_analysis import translate_and_analyse
 from FAQVECT import topic_FAQ
+from streamlitGrade import grade_prediction
 
 # ==============================
 # variable de session
@@ -49,17 +50,21 @@ def analyse (dict) :
         with col3:
             st.button("recherche de topic et FAQ", on_click=click_topic_FAQ)
 
-        # bouton de l'annalyse de la candidature
-        if st.session_state.candidature == True :
-            st.header("Annalyse de la candidature :")
-
         # bouton de l'analyse du message
         if st.session_state.message == True :
             st.header("Analyse du message")
-            message = dict["new_message"]
-            emotion_labels = translate_and_analyse(message)
+            texte = dict["new_message"]
+            emotion_labels = translate_and_analyse(texte)
             st.write("l'analyse de l'émotion du message donne :")
             st.write(emotion_labels)
+
+        # bouton de l'annalyse de la candidature
+        if st.session_state.candidature == True :
+            st.header("Annalyse de la candidature :")
+            emotion_labels = translate_and_analyse(dict["new_message"])
+            emotion = emotion_labels["emotion"]
+            dict["new_emotion"] = emotion
+            grade_prediction(dict)
 
         # bouton de la FAQ et de recherche de topic
         if st.session_state.topic_FAQ == True :

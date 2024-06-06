@@ -1,3 +1,4 @@
+streamlit
 pymongo
 python-dotenv
 psycopg2-binary
@@ -13,3 +14,8 @@ deep_translator
 langdetect
 pdoc
 scikit-learn
+sentencepiece
+sacremoses
+nltk
+pytest
+mlflow
