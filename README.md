@@ -15,7 +15,8 @@ lien du google doc : https://docs.google.com/document/d/1RpKTF53EDqeXQOWVQJqJz2H
 
 lien de l'appli sur streamlit : https://projetmoocdatasentinels-rwkk9ztkgheqywdbizpsr5.streamlit.app/
 
-
+# Présentation:
+présentation.pptx
 ## rôle :
 gestion de gitHub : Jonathan
 
