@@ -13,6 +13,8 @@ lien du trello : https://trello.com/invite/b/97gStloa/ATTI77219a83e9f886a5c98694
 
 lien du google doc : https://docs.google.com/document/d/1RpKTF53EDqeXQOWVQJqJz2Hf-2vFspMKKSNg8GAF2oM/edit?usp=sharing
 
+lien de l'appli sur streamlit : https://projetmoocdatasentinels-rwkk9ztkgheqywdbizpsr5.streamlit.app/
+
 
 ## rôle :
 gestion de gitHub : Jonathan
